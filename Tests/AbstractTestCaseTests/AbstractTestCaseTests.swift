@@ -1,11 +1,26 @@
 import XCTest
 @testable import AbstractTestCase
 
-final class AbstractTestCaseTests: XCTestCase {
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        XCTAssertEqual(AbstractTestCase().text, "Hello, World!")
+class AbstractTestCaseBaseTests: AbstractTestCase {
+    var shouldFail = true
+    
+    override var abstractTestClass: XCTest.Type {
+        AbstractTestCaseBaseTests.self
+    }
+    
+    func testAbstractlyOnlyRunsInSubclasses() {
+        if shouldFail {
+            XCTFail()
+        }
+    }
+    
+    func testOtherwiseRunsInAll() {
+        XCTAssertTrue(true)
+    }
+}
+
+class AbstractTestCaseSubTests: AbstractTestCaseBaseTests {
+    override func setUp() {
+        shouldFail = false
     }
 }
