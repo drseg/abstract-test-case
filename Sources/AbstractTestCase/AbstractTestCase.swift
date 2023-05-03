@@ -1,6 +1,4 @@
-#if canImport(XCTest)
 import XCTest
-
 
 open class AbstractTestCase: XCTestCase {
     open var abstractTestIdentifier: String {
@@ -30,4 +28,3 @@ open class AbstractTestCase: XCTestCase {
         !test.name.contains(abstractTestIdentifier)
     }
 }
-#endif
