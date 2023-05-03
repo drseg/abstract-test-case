@@ -1,0 +1,25 @@
+{
+  "configurations" : [
+    {
+      "id" : "F6A021DE-84FB-48A6-9856-149D13A2C9FE",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "AbstractTestCaseTests",
+        "name" : "AbstractTestCaseTests"
+      }
+    }
+  ],
+  "version" : 1
+}

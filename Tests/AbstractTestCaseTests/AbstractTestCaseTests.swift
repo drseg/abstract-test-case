@@ -11,11 +11,13 @@ class AbstractTestCaseBaseTests: AbstractTestCase {
     func testAbstractlyOnlyRunsInSubclasses() {
         if shouldFail {
             XCTFail()
+        } else {
+            XCTAssert(true)
         }
     }
     
     func testOtherwiseRunsInAll() {
-        XCTAssertTrue(true)
+        XCTAssert(true)
     }
 }
 
